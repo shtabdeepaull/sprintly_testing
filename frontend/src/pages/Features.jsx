@@ -24,8 +24,7 @@ import {
   HiOutlineDeviceMobile,
   HiOutlineRefresh,
   HiOutlineCube,
-  // HiOutlineTemplate,
-  // HiOutlineColorSwatch
+  
 } from 'react-icons/hi';
 
 const Features = () => {

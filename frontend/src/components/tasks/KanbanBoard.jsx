@@ -38,7 +38,7 @@ const KanbanBoard = ({
     }
 
     // Get the task that was dragged
-    const task = tasks.find(t => t._id === draggableId);
+    
 
     if (source.droppableId !== destination.droppableId) {
       // Status changed
