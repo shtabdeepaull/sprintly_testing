@@ -10,8 +10,8 @@ import {
   HiOutlineQuestionMarkCircle,
   HiOutlineStar,
   HiOutlineShieldCheck,
-  HiOutlineLightningBolt,
-  HiOutlineUserGroup
+  // HiOutlineLightningBolt,
+  // HiOutlineUserGroup
 } from 'react-icons/hi';
 
 const Pricing = () => {

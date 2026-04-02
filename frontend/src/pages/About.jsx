@@ -8,11 +8,11 @@ import {
   HiOutlineLightningBolt,
   HiOutlineClock,
   HiOutlineUserGroup,
-  HiOutlineCheck,
-  HiOutlineCode,
-  HiOutlineServer,
-  HiOutlineDatabase,
-  HiOutlineColorSwatch
+  // HiOutlineCheck,
+  // HiOutlineCode,
+  // HiOutlineServer,
+  // HiOutlineDatabase,
+  // HiOutlineColorSwatch
 } from 'react-icons/hi';
 
 const About = () => {
