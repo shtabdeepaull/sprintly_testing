@@ -28,8 +28,18 @@ app.use(
   })
 );
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error(`Not allowed by CORS: ${origin}`));
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -40,7 +50,7 @@ app.options('*', cors(corsOptions));
 
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: allowedOrigins,
     credentials: true
   }
 });
@@ -119,7 +129,7 @@ const PORT = config.PORT || 5000;
 
 server.listen(PORT, () => {
   console.log(`Server running in ${config.NODE_ENV} mode on port ${PORT}`);
-  console.log('CORS enabled for http://localhost:3000');
+  console.log(`CORS enabled for: ${allowedOrigins.join(', ')}`);
 });
 
 process.on('unhandledRejection', (err) => {
