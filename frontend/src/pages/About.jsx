@@ -10,6 +10,7 @@ import {
   HiOutlineUserGroup,
   
 } from 'react-icons/hi';
+import Footer from '../components/layout/Footer';
 
 const About = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -704,88 +705,7 @@ const About = () => {
       {/* ============================================ */}
       {/* FOOTER */}
       {/* ============================================ */}
-      <footer className="bg-slate-900 text-slate-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
-            {/* Brand */}
-            <div className="col-span-2 lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2.5 mb-6">
-                <div className="w-9 h-9 bg-teal-600 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
-                <span className="text-xl font-bold text-white">Sprintly</span>
-              </Link>
-              <p className="text-slate-400 mb-6 leading-relaxed">
-                Precision project management for teams that ship.
-              </p>
-              <div className="flex gap-3">
-                {['T', 'L', 'G', 'Y'].map((letter, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    className="w-10 h-10 bg-slate-800 hover:bg-teal-600 rounded-xl flex items-center justify-center text-slate-400 hover:text-white transition-colors"
-                    aria-label={`Social link ${letter}`}
-                  >
-                    <span className="text-xs font-bold">{letter}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Footer Links */}
-            {[
-              { title: 'Product', links: ['Features', 'Pricing', 'Integrations', 'Changelog'] },
-              { title: 'Company', links: ['About', 'Blog', 'Careers', 'Contact'] },
-              {
-                title: 'Resources',
-                links: ['Documentation', 'API Reference', 'Help Center', 'Community']
-              },
-              { title: 'Legal', links: ['Privacy', 'Terms', 'Security', 'GDPR'] }
-            ].map((col, i) => (
-              <div key={i}>
-                <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
-                  {col.title}
-                </h4>
-                <ul className="space-y-3">
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <Link
-                        to={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-slate-400 hover:text-white transition-colors"
-                      >
-                        {link}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-slate-500 text-sm">
-                © {new Date().getFullYear()} Sprintly, Inc. All rights reserved.
-              </p>
-              <div className="flex items-center gap-6">
-                {['Privacy', 'Terms', 'Cookies'].map((item) => (
-                    <Link
-                      key={item}
-                      to={`/${item.toLowerCase()}`}
-                      className="text-slate-500 hover:text-white text-sm transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
+      <Footer/>
       {/* ============================================ */}
       {/* CUSTOM STYLES */}
       {/* ============================================ */}

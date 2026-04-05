@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../components/layout/Footer';
 import {
   HiOutlineViewBoards,
   HiOutlineUserGroup,
@@ -769,136 +770,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <footer className="bg-slate-900 text-slate-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
-            <div className="col-span-2 lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2.5 mb-6">
-                <div className="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
-                <span className="text-xl font-bold text-white">Sprintly</span>
-              </Link>
-              <p className="text-slate-400 mb-6 leading-relaxed">
-                Modern project management for teams that ship.
-              </p>
-              <div className="flex gap-3">
-                {['Twitter', 'LinkedIn', 'GitHub', 'YouTube'].map((social) => (
-                  <a
-                    key={social}
-                    href={`https://${social.toLowerCase()}.com`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-slate-800 hover:bg-indigo-600 rounded-xl flex items-center justify-center text-slate-400 hover:text-white transition-colors"
-                    aria-label={social}
-                  >
-                    <span className="text-xs font-bold">{social[0]}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
-                Product
-              </h4>
-              <ul className="space-y-3">
-                {['Features', 'Pricing', 'Integrations', 'Changelog', 'Roadmap'].map((item) => (
-                  <li key={item}>
-                    <Link
-                      to={`/${item.toLowerCase()}`}
-                      className="text-slate-400 hover:text-white transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
-                Company
-              </h4>
-              <ul className="space-y-3">
-                {['About', 'Blog', 'Careers', 'Press', 'Contact'].map((item) => (
-                  <li key={item}>
-                    <Link
-                      to={`/${item.toLowerCase()}`}
-                      className="text-slate-400 hover:text-white transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
-                Resources
-              </h4>
-              <ul className="space-y-3">
-                {[
-                  { label: 'Help Center', to: '/help-center' },
-                  { label: 'Documentation', to: '/documentation' },
-                  { label: 'API Reference', to: '/api-reference' },
-                  { label: 'Community', to: '/community' },
-                  { label: 'Status', to: '/status' }
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link to={item.to} className="text-slate-400 hover:text-white transition-colors">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
-                Legal
-              </h4>
-              <ul className="space-y-3">
-                {[
-                  { label: 'Privacy Policy', to: '/privacy' },
-                  { label: 'Terms of Service', to: '/terms' },
-                  { label: 'Cookie Policy', to: '/cookies' },
-                  { label: 'Security', to: '/security' },
-                  { label: 'GDPR', to: '/gdpr' }
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link to={item.to} className="text-slate-400 hover:text-white transition-colors">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-slate-500 text-sm">
-                © {new Date().getFullYear()} Sprintly, Inc. All rights reserved.
-              </p>
-              <div className="flex items-center gap-6">
-                <Link to="/privacy" className="text-slate-500 hover:text-white text-sm transition-colors">
-                  Privacy
-                </Link>
-                <Link to="/terms" className="text-slate-500 hover:text-white text-sm transition-colors">
-                  Terms
-                </Link>
-                <Link to="/cookies" className="text-slate-500 hover:text-white text-sm transition-colors">
-                  Cookies
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+     <Footer/>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
