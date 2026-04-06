@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/layout/Footer';
+
 import {
   HiOutlineViewBoards,
   HiOutlineUserGroup,
-  HiOutlineChartBar,
-  HiOutlineLightningBolt,
-  HiOutlineShieldCheck,
   HiOutlineBell,
   HiOutlineCheck,
   HiOutlineArrowRight,
@@ -51,27 +49,6 @@ const LandingPage = () => {
       color: 'bg-emerald-50 text-emerald-600'
     },
     {
-      icon: HiOutlineChartBar,
-      title: 'Advanced Analytics',
-      description:
-        'Make data-driven decisions with comprehensive dashboards and insights.',
-      color: 'bg-amber-50 text-amber-600'
-    },
-    {
-      icon: HiOutlineLightningBolt,
-      title: 'Workflow Automation',
-      description:
-        'Automate repetitive tasks and focus on what matters most to your team.',
-      color: 'bg-rose-50 text-rose-600'
-    },
-    {
-      icon: HiOutlineShieldCheck,
-      title: 'Enterprise Security',
-      description:
-        'Bank-grade encryption with SSO, 2FA, and SOC 2 Type II compliance.',
-      color: 'bg-cyan-50 text-cyan-600'
-    },
-    {
       icon: HiOutlineBell,
       title: 'Smart Notifications',
       description:
@@ -79,8 +56,6 @@ const LandingPage = () => {
       color: 'bg-violet-50 text-violet-600'
     }
   ];
-
-  const trustedCompanies = ['Google', 'Microsoft', 'Airbnb', 'Spotify', 'Netflix', 'Slack'];
 
   const featureHighlights = [
     {
@@ -125,13 +100,6 @@ const LandingPage = () => {
       ],
       imageType: 'analytics'
     }
-  ];
-
-  const stats = [
-    { value: '50,000+', label: 'Active Teams' },
-    { value: '2M+', label: 'Tasks Completed' },
-    { value: '99.9%', label: 'Uptime SLA' },
-    { value: '150+', label: 'Countries' }
   ];
 
   const testimonials = [
@@ -563,29 +531,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 border-y border-slate-200/60">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-center text-slate-500 font-medium mb-8">
-            Trusted by 50,000+ teams at world-class companies
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-            {trustedCompanies.map((company, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-2 text-slate-400 hover:text-slate-600 transition-colors cursor-default"
-              >
-                <div className="w-8 h-8 bg-slate-200/80 rounded-lg flex items-center justify-center font-bold text-sm">
-                  {company[0]}
-                </div>
-                <span className="text-lg font-semibold tracking-tight hidden sm:block">
-                  {company}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -678,21 +623,6 @@ const LandingPage = () => {
           </div>
         </section>
       ))}
-
-      <section className="py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-indigo-600">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-indigo-200 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">

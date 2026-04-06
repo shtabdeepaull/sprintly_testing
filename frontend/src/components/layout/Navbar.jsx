@@ -33,6 +33,7 @@ const Navbar = ({ onToggleSidebar }) => {
     <nav className="sticky top-0 z-40 bg-white border-b border-secondary-200">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Left Section: Logo and Sidebar Toggle */}
           <div className="flex items-center gap-4">
             <button
               onClick={onToggleSidebar}
@@ -44,13 +45,11 @@ const Navbar = ({ onToggleSidebar }) => {
 
             <Link to={brandLink} className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
+                <img src={Logo} alt="Sprintly Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="hidden sm:block text-xl font-bold text-secondary-900">
-                Sprintly
-              </span>
             </Link>
 
+            {/* Dropdown for Switching Organizations */}
             {hasWorkspace && organizations.length > 1 && (
               <Dropdown
                 trigger={
@@ -78,7 +77,9 @@ const Navbar = ({ onToggleSidebar }) => {
             )}
           </div>
 
+          {/* Right Section: Notifications and User Profile */}
           <div className="flex items-center gap-2">
+            {/* Notifications Bell */}
             <Link
               to="/notifications"
               className="relative p-2 text-secondary-600 hover:bg-secondary-100 rounded-lg"
@@ -91,6 +92,7 @@ const Navbar = ({ onToggleSidebar }) => {
               )}
             </Link>
 
+            {/* User Profile Dropdown */}
             <Dropdown
               trigger={
                 <button
@@ -106,11 +108,13 @@ const Navbar = ({ onToggleSidebar }) => {
               }
               position="bottom-right"
             >
+              {/* User Profile Dropdown Content */}
               <div className="px-4 py-3 border-b border-secondary-100">
                 <p className="text-sm font-medium text-secondary-900">{user?.fullName}</p>
                 <p className="text-xs text-secondary-500">{user?.email}</p>
               </div>
 
+              {/* Profile and Settings */}
               <DropdownItem icon={HiUser} onClick={() => navigate('/profile')}>
                 Profile
               </DropdownItem>
@@ -123,6 +127,7 @@ const Navbar = ({ onToggleSidebar }) => {
 
               <DropdownDivider />
 
+              {/* Logout */}
               <DropdownItem icon={HiLogout} danger onClick={handleLogout}>
                 Log out
               </DropdownItem>
