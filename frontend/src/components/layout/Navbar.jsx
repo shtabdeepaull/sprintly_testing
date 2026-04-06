@@ -12,6 +12,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useOrganization } from '../../hooks/useOrganization';
 import { useNotifications } from '../../hooks/useNotifications';
 import Avatar from '../common/Avatar';
+import Logo from '../../assets/logo.png';
 import Dropdown, { DropdownItem, DropdownDivider } from '../common/Dropdown';
 
 const Navbar = ({ onToggleSidebar }) => {

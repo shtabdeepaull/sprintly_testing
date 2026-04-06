@@ -1,4 +1,3 @@
-// config/config.js
 require('dotenv').config();
 
 module.exports = {
@@ -11,11 +10,11 @@ module.exports = {
   JWT_EXPIRE: process.env.JWT_EXPIRE || '30d',
   JWT_COOKIE_EXPIRE: process.env.JWT_COOKIE_EXPIRE || 30,
 
-  EMAIL_HOST: process.env.EMAIL_HOST,
-  EMAIL_PORT: process.env.EMAIL_PORT,
-  EMAIL_USER: process.env.EMAIL_USER,
-  EMAIL_PASS: process.env.EMAIL_PASS,
-  EMAIL_FROM: process.env.EMAIL_FROM || 'noreply@sprintly.com',
+  SMTP_HOST: process.env.SMTP_HOST,
+  SMTP_PORT: Number(process.env.SMTP_PORT) || 587,
+  SMTP_EMAIL: process.env.SMTP_EMAIL,
+  SMTP_PASSWORD: process.env.SMTP_PASSWORD,
+  FROM_NAME: process.env.FROM_NAME || 'Sprintly',
 
   CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
   CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,

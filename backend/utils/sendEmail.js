@@ -1,20 +1,21 @@
 const nodemailer = require('nodemailer');
+const config = require('../config/config');
 
 const sendEmail = async ({ email, subject, message, html }) => {
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT) || 587,
+    host: config.SMTP_HOST,
+    port: config.SMTP_PORT,
     secure: false, // use false for port 587
     auth: {
-      user: process.env.SMTP_EMAIL,
-      pass: process.env.SMTP_PASSWORD,
+      user: config.SMTP_EMAIL,
+      pass: config.SMTP_PASSWORD,
     },
   });
 
   await transporter.verify();
 
   const mailOptions = {
-    from: `${process.env.FROM_NAME || 'Sprintly'} <${process.env.SMTP_EMAIL}>`,
+    from: `${config.FROM_NAME || 'Sprintly'} <${config.SMTP_EMAIL}>`,
     to: email,
     subject,
     text: message || '',
