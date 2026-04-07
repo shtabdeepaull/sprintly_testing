@@ -7,6 +7,7 @@ import Input from '../components/common/Input';
 import Button from '../components/common/Button';
 import { validateForgotPasswordForm } from '../utils/validators';
 import { toast } from 'react-toastify';
+import Logo from '../assets/logo.png';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -48,11 +49,12 @@ const ForgotPassword = () => {
         <div className="w-full max-w-md">
           {/* Logo */}
           <div className="text-center mb-8">
-            <Link to="/" className="inline-flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
-              <span className="text-2xl font-bold text-secondary-900">Sprintly</span>
+            <Link to="/" className="inline-flex items-center justify-center">
+              <img
+                src={Logo}
+                alt="Sprintly Logo"
+                className="h-12 w-auto object-contain"
+              />
             </Link>
           </div>
 
@@ -97,11 +99,12 @@ const ForgotPassword = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
-            <span className="text-2xl font-bold text-secondary-900">Sprintly</span>
+          <Link to="/" className="inline-flex items-center justify-center">
+            <img
+              src={Logo}
+              alt="Sprintly Logo"
+              className="h-12 w-auto object-contain"
+            />
           </Link>
         </div>
 

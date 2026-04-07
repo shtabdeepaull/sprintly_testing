@@ -1,12 +1,13 @@
 // src/pages/CreateOrganization.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import { HiOutlineOfficeBuilding } from 'react-icons/hi';
 import { useOrganization } from '../hooks/useOrganization';
 import { generateSlug } from '../utils/helpers';
 import Input from '../components/common/Input';
 import Textarea from '../components/common/Textarea';
 import Button from '../components/common/Button';
+import Logo from '../assets/logo.png';
 
 const CreateOrganization = () => {
   const navigate = useNavigate();
@@ -70,15 +71,17 @@ const CreateOrganization = () => {
     <div className="min-h-screen flex items-center justify-center bg-secondary-50 px-4 py-12">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
-            <span className="text-2xl font-bold text-secondary-900">Sprintly</span>
+        <Link to="/" className="inline-flex items-center justify-center">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center">
+            <img
+              src={Logo}
+              alt="Sprintly Logo"
+              className="h-12 w-auto object-contain"
+            />
           </div>
-        </div>
-
+          </div>
+        </Link>
         {/* Card */}
         <div className="bg-white rounded-xl shadow-soft p-8">
           <div className="text-center mb-6">

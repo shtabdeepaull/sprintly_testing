@@ -7,6 +7,7 @@ import Input from '../components/common/Input';
 import Button from '../components/common/Button';
 import { validateResetPasswordForm, validatePassword } from '../utils/validators';
 import { toast } from 'react-toastify';
+import Logo from '../assets/logo.png';
 
 const ResetPassword = () => {
   const { token } = useParams();
@@ -77,11 +78,12 @@ const ResetPassword = () => {
       <div className="min-h-screen flex items-center justify-center bg-secondary-50 px-4 py-12">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <Link to="/" className="inline-flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
-              <span className="text-2xl font-bold text-secondary-900">Sprintly</span>
+            <Link to="/" className="inline-flex items-center justify-center">
+              <img
+                src={Logo}
+                alt="Sprintly Logo"
+                className="h-12 w-auto object-contain"
+              />
             </Link>
           </div>
 
@@ -124,11 +126,12 @@ const ResetPassword = () => {
       <div className="min-h-screen flex items-center justify-center bg-secondary-50 px-4 py-12">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <Link to="/" className="inline-flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
-              <span className="text-2xl font-bold text-secondary-900">Sprintly</span>
+            <Link to="/" className="inline-flex items-center justify-center">
+              <img
+                src={Logo}
+                alt="Sprintly Logo"
+                className="h-12 w-auto object-contain"
+              />
             </Link>
           </div>
 
@@ -171,11 +174,12 @@ const ResetPassword = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
-            <span className="text-2xl font-bold text-secondary-900">Sprintly</span>
+          <Link to="/" className="inline-flex items-center justify-center">
+            <img
+              src={Logo}
+              alt="Sprintly Logo"
+              className="h-12 w-auto object-contain"
+            />
           </Link>
         </div>
 
