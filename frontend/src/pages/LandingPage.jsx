@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
+import LandingHeroDashboard from '../assets/landing-hero-dashboard.png';
 import PublicCTA from '../components/common/PublicCTA';
 import {
   HiOutlineViewBoards,
@@ -109,102 +110,6 @@ const LandingPage = () => {
       initials: 'EJ'
     }
   ];
-
-  const HeroIllustration = () => (
-    <svg
-      viewBox="0 0 600 450"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-auto"
-    >
-      <rect x="40" y="30" width="520" height="380" rx="20" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="2" />
-      <rect x="40" y="30" width="520" height="56" rx="20" fill="#4F46E5" />
-      <rect x="40" y="66" width="520" height="20" fill="#4F46E5" />
-      <circle cx="72" cy="58" r="8" fill="#FCA5A5" />
-      <circle cx="96" cy="58" r="8" fill="#FCD34D" />
-      <circle cx="120" cy="58" r="8" fill="#6EE7B7" />
-      <rect x="200" y="46" width="200" height="24" rx="12" fill="rgba(255,255,255,0.2)" />
-      <rect x="60" y="100" width="155" height="290" rx="12" fill="#F1F5F9" />
-      <rect x="225" y="100" width="155" height="290" rx="12" fill="#F1F5F9" />
-      <rect x="390" y="100" width="155" height="290" rx="12" fill="#F1F5F9" />
-      <rect x="72" y="112" width="60" height="14" rx="4" fill="#94A3B8" />
-      <rect x="237" y="112" width="75" height="14" rx="4" fill="#94A3B8" />
-      <rect x="402" y="112" width="45" height="14" rx="4" fill="#94A3B8" />
-
-      <g filter="url(#cardShadow)">
-        <rect x="72" y="140" width="131" height="80" rx="10" fill="white" />
-        <rect x="84" y="152" width="90" height="10" rx="3" fill="#334155" />
-        <rect x="84" y="168" width="107" height="8" rx="2" fill="#CBD5E1" />
-        <rect x="84" y="182" width="75" height="8" rx="2" fill="#CBD5E1" />
-        <rect x="84" y="200" width="40" height="12" rx="4" fill="#DBEAFE" />
-        <circle cx="178" cy="206" r="12" fill="#4F46E5" />
-      </g>
-
-      <g filter="url(#cardShadow)">
-        <rect x="72" y="232" width="131" height="70" rx="10" fill="white" />
-        <rect x="84" y="244" width="70" height="10" rx="3" fill="#334155" />
-        <rect x="84" y="260" width="100" height="8" rx="2" fill="#CBD5E1" />
-        <rect x="84" y="280" width="35" height="12" rx="4" fill="#FEF3C7" />
-        <circle cx="178" cy="286" r="12" fill="#10B981" />
-      </g>
-
-      <g filter="url(#cardShadow)">
-        <rect x="72" y="314" width="131" height="60" rx="10" fill="white" />
-        <rect x="84" y="326" width="85" height="10" rx="3" fill="#334155" />
-        <rect x="84" y="342" width="95" height="8" rx="2" fill="#CBD5E1" />
-        <circle cx="178" cy="354" r="12" fill="#8B5CF6" />
-      </g>
-
-      <g filter="url(#cardShadow)">
-        <rect x="237" y="140" width="131" height="90" rx="10" fill="white" />
-        <rect x="249" y="152" width="95" height="10" rx="3" fill="#334155" />
-        <rect x="249" y="168" width="107" height="8" rx="2" fill="#CBD5E1" />
-        <rect x="249" y="182" width="85" height="8" rx="2" fill="#CBD5E1" />
-        <rect x="249" y="200" width="50" height="12" rx="4" fill="#FCE7F3" />
-        <rect x="305" y="200" width="40" height="12" rx="4" fill="#DBEAFE" />
-        <circle cx="343" cy="216" r="12" fill="#F59E0B" />
-      </g>
-
-      <g filter="url(#cardShadow)">
-        <rect x="237" y="244" width="131" height="65" rx="10" fill="white" />
-        <rect x="249" y="256" width="80" height="10" rx="3" fill="#334155" />
-        <rect x="249" y="272" width="100" height="8" rx="2" fill="#CBD5E1" />
-        <circle cx="343" cy="290" r="12" fill="#EC4899" />
-      </g>
-
-      <g filter="url(#cardShadow)">
-        <rect x="402" y="140" width="131" height="75" rx="10" fill="white" />
-        <rect x="414" y="152" width="75" height="10" rx="3" fill="#334155" />
-        <rect x="414" y="168" width="105" height="8" rx="2" fill="#CBD5E1" />
-        <rect x="414" y="182" width="60" height="8" rx="2" fill="#CBD5E1" />
-        <rect x="414" y="196" width="45" height="12" rx="4" fill="#D1FAE5" />
-        <circle cx="508" cy="200" r="12" fill="#06B6D4" />
-      </g>
-
-      <g className="animate-pulse">
-        <circle cx="540" cy="50" r="28" fill="#EEF2FF" stroke="#C7D2FE" strokeWidth="2" />
-        <path d="M528 50L536 58L552 42" stroke="#4F46E5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
-
-      <g>
-        <circle cx="30" cy="420" r="22" fill="#FEF3C7" stroke="#FCD34D" strokeWidth="2" />
-        <path d="M22 420L28 426L38 414" stroke="#F59E0B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
-
-      <circle cx="20" cy="120" r="4" fill="#C7D2FE" />
-      <circle cx="20" cy="140" r="4" fill="#C7D2FE" />
-      <circle cx="20" cy="160" r="4" fill="#C7D2FE" />
-      <circle cx="580" cy="320" r="4" fill="#C7D2FE" />
-      <circle cx="580" cy="340" r="4" fill="#C7D2FE" />
-      <circle cx="580" cy="360" r="4" fill="#C7D2FE" />
-
-      <defs>
-        <filter id="cardShadow" x="-10" y="-10" width="200" height="200" filterUnits="userSpaceOnUse">
-          <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000" floodOpacity="0.08" />
-        </filter>
-      </defs>
-    </svg>
-  );
 
   const FeatureIllustration = ({ type }) => {
     const illustrations = {
@@ -398,8 +303,12 @@ const LandingPage = () => {
 
             <div className="order-1 lg:order-2 relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 rounded-3xl opacity-40 blur-2xl -z-10" />
-              <div className="relative bg-white rounded-2xl shadow-2xl shadow-slate-200/60 border border-slate-200/60 p-2">
-                <HeroIllustration />
+              <div className="relative bg-white rounded-2xl shadow-2xl shadow-slate-200/60 border border-slate-200/60 p-2 overflow-hidden">
+                <img
+                  src={LandingHeroDashboard}
+                  alt="Sprintly dashboard preview"
+                  className="w-full h-auto rounded-[1rem] object-cover"
+                />
               </div>
 
               <div className="hidden lg:flex absolute -left-6 top-1/4 bg-white rounded-xl shadow-xl border border-slate-100 p-4 items-center gap-3 animate-float">

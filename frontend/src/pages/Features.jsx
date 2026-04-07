@@ -1,9 +1,13 @@
 // src/pages/Features.jsx
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from  '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
 import PublicCTA from '../components/common/PublicCTA';
+import FeaturesTaskManagement from '../assets/features-task-management.png';
+import FeaturesWorkflowBoard from '../assets/features-workflow-board.png';
+import FeaturesCollaboration from '../assets/features-collaboration.png';
+import FeaturesAnalytics from '../assets/features-analytics.png';
 import {
   HiOutlineViewBoards,
   HiOutlineUserGroup,
@@ -25,7 +29,6 @@ import {
   HiOutlineDeviceMobile,
   HiOutlineRefresh,
   HiOutlineCube,
-  
 } from 'react-icons/hi';
 
 const Features = () => {
@@ -145,190 +148,41 @@ const Features = () => {
   const FeatureIllustration = ({ type }) => {
     const illustrations = {
       task: (
-        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-          <rect width="400" height="300" rx="16" fill="#F8FAFC"/>
-          <rect x="20" y="20" width="360" height="260" rx="12" fill="white" stroke="#E2E8F0" strokeWidth="2"/>
-          
-          {/* Task Header */}
-          <rect x="40" y="40" width="200" height="16" rx="4" fill="#334155"/>
-          <rect x="40" y="64" width="280" height="8" rx="2" fill="#94A3B8"/>
-          <rect x="40" y="80" width="240" height="8" rx="2" fill="#94A3B8"/>
-          
-          {/* Priority Badge */}
-          <rect x="300" y="40" width="60" height="24" rx="12" fill="#FEE2E2"/>
-          <circle cx="315" cy="52" r="4" fill="#EF4444"/>
-          <rect x="324" y="48" width="28" height="8" rx="2" fill="#EF4444"/>
-          
-          {/* Checklist */}
-          <rect x="40" y="110" width="320" height="100" rx="8" fill="#F8FAFC"/>
-          {[0, 1, 2, 3].map((i) => (
-            <g key={i}>
-              <rect x="55" y={125 + i * 22} width="16" height="16" rx="4" fill={i < 2 ? "#4F46E5" : "white"} stroke="#4F46E5" strokeWidth="2"/>
-              {i < 2 && <path d={`M59 ${133 + i * 22}l3 3 5-5`} stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>}
-              <rect x="80" y={128 + i * 22} width={[180, 140, 200, 160][i]} height="10" rx="2" fill={i < 2 ? "#CBD5E1" : "#334155"}/>
-            </g>
-          ))}
-          
-          {/* Progress Bar */}
-          <rect x="40" y="230" width="320" height="8" rx="4" fill="#E2E8F0"/>
-          <rect x="40" y="230" width="200" height="8" rx="4" fill="#4F46E5"/>
-          <text x="40" y="258" fill="#64748B" fontSize="12">50% complete</text>
-          
-          {/* Assignees */}
-          <circle cx="320" cy="250" r="16" fill="#4F46E5"/>
-          <circle cx="340" cy="250" r="16" fill="#10B981"/>
-          <circle cx="360" cy="250" r="16" fill="#F59E0B"/>
-        </svg>
+        <div className="w-full rounded-[1rem] overflow-hidden bg-slate-50">
+          <img
+            src={FeaturesTaskManagement}
+            alt="Sprintly task management preview"
+            className="w-full h-auto object-cover object-top"
+          />
+        </div>
       ),
       workflow: (
-        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-          <rect width="400" height="300" rx="16" fill="#F8FAFC"/>
-          
-          {/* Kanban Columns */}
-          <rect x="15" y="20" width="115" height="260" rx="10" fill="#EEF2FF"/>
-          <rect x="142" y="20" width="115" height="260" rx="10" fill="#FEF3C7"/>
-          <rect x="270" y="20" width="115" height="260" rx="10" fill="#D1FAE5"/>
-          
-          {/* Column Headers */}
-          <rect x="25" y="30" width="50" height="14" rx="4" fill="#4F46E5"/>
-          <rect x="152" y="30" width="65" height="14" rx="4" fill="#F59E0B"/>
-          <rect x="280" y="30" width="45" height="14" rx="4" fill="#10B981"/>
-          
-          {/* Cards Column 1 */}
-          <rect x="25" y="55" width="95" height="60" rx="8" fill="white" stroke="#C7D2FE"/>
-          <rect x="35" y="65" width="60" height="8" rx="2" fill="#334155"/>
-          <rect x="35" y="78" width="75" height="6" rx="2" fill="#94A3B8"/>
-          <circle cx="100" cy="100" r="10" fill="#4F46E5"/>
-          
-          <rect x="25" y="125" width="95" height="50" rx="8" fill="white" stroke="#C7D2FE"/>
-          <rect x="35" y="135" width="55" height="8" rx="2" fill="#334155"/>
-          <rect x="35" y="148" width="70" height="6" rx="2" fill="#94A3B8"/>
-          
-          <rect x="25" y="185" width="95" height="45" rx="8" fill="white" stroke="#C7D2FE"/>
-          <rect x="35" y="195" width="65" height="8" rx="2" fill="#334155"/>
-          <rect x="35" y="208" width="50" height="6" rx="2" fill="#94A3B8"/>
-          
-          {/* Cards Column 2 */}
-          <rect x="152" y="55" width="95" height="70" rx="8" fill="white" stroke="#FDE68A"/>
-          <rect x="162" y="65" width="70" height="8" rx="2" fill="#334155"/>
-          <rect x="162" y="78" width="75" height="6" rx="2" fill="#94A3B8"/>
-          <rect x="162" y="95" width="40" height="16" rx="4" fill="#FEF3C7"/>
-          <circle cx="227" cy="108" r="10" fill="#F59E0B"/>
-          
-          <rect x="152" y="135" width="95" height="55" rx="8" fill="white" stroke="#FDE68A"/>
-          <rect x="162" y="145" width="55" height="8" rx="2" fill="#334155"/>
-          <rect x="162" y="158" width="70" height="6" rx="2" fill="#94A3B8"/>
-          
-          {/* Cards Column 3 */}
-          <rect x="280" y="55" width="95" height="55" rx="8" fill="white" stroke="#A7F3D0"/>
-          <rect x="290" y="65" width="60" height="8" rx="2" fill="#334155"/>
-          <rect x="290" y="78" width="70" height="6" rx="2" fill="#94A3B8"/>
-          <circle cx="355" cy="93" r="10" fill="#10B981"/>
-          
-          <rect x="280" y="120" width="95" height="50" rx="8" fill="white" stroke="#A7F3D0"/>
-          <rect x="290" y="130" width="50" height="8" rx="2" fill="#334155"/>
-          <rect x="290" y="143" width="65" height="6" rx="2" fill="#94A3B8"/>
-          
-          {/* Drag indicator */}
-          <rect x="155" y="200" width="90" height="50" rx="8" fill="white" stroke="#4F46E5" strokeWidth="2" strokeDasharray="4 2"/>
-          <path d="M200 215 L200 235 M190 225 L200 235 L210 225" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        <div className="w-full rounded-[1rem] overflow-hidden bg-slate-50">
+          <img
+            src={FeaturesWorkflowBoard}
+            alt="Sprintly workflow board preview"
+            className="w-full h-auto object-cover object-top"
+          />
+        </div>
       ),
       collaboration: (
-        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-          <rect width="400" height="300" rx="16" fill="#F8FAFC"/>
-          
-          {/* Chat Container */}
-          <rect x="20" y="20" width="360" height="260" rx="12" fill="white" stroke="#E2E8F0" strokeWidth="2"/>
-          
-          {/* Message 1 */}
-          <circle cx="50" cy="60" r="20" fill="#EEF2FF"/>
-          <text x="43" y="66" fill="#4F46E5" fontSize="14" fontWeight="bold">SC</text>
-          <rect x="80" y="45" width="200" height="45" rx="12" fill="#F1F5F9"/>
-          <rect x="95" y="55" width="140" height="8" rx="2" fill="#334155"/>
-          <rect x="95" y="70" width="170" height="6" rx="2" fill="#94A3B8"/>
-          <text x="290" y="80" fill="#94A3B8" fontSize="10">2m ago</text>
-          
-          {/* Message 2 - Current user */}
-          <rect x="120" y="105" width="220" height="50" rx="12" fill="#4F46E5"/>
-          <rect x="135" y="118" width="160" height="8" rx="2" fill="white"/>
-          <rect x="135" y="133" width="190" height="6" rx="2" fill="#C7D2FE"/>
-          <circle cx="355" cy="130" r="20" fill="#EEF2FF"/>
-          <text x="348" y="136" fill="#4F46E5" fontSize="14" fontWeight="bold">ME</text>
-          
-          {/* Message 3 */}
-          <circle cx="50" cy="195" r="20" fill="#F0FDF4"/>
-          <text x="43" y="201" fill="#10B981" fontSize="14" fontWeight="bold">MR</text>
-          <rect x="80" y="175" width="180" height="55" rx="12" fill="#F1F5F9"/>
-          <rect x="95" y="188" width="120" height="8" rx="2" fill="#334155"/>
-          <rect x="95" y="203" width="150" height="6" rx="2" fill="#94A3B8"/>
-          <rect x="95" y="215" width="100" height="6" rx="2" fill="#94A3B8"/>
-          
-          {/* Input Area */}
-          <rect x="30" y="245" width="300" height="28" rx="14" fill="#F1F5F9"/>
-          <rect x="45" y="255" width="100" height="8" rx="2" fill="#CBD5E1"/>
-          <circle cx="350" cy="259" r="14" fill="#4F46E5"/>
-          <path d="M345 259 L355 259 M350 254 L350 264" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-          
-          {/* Typing Indicator */}
-          <rect x="80" y="240" width="60" height="20" rx="10" fill="#F1F5F9"/>
-          <circle cx="95" cy="250" r="3" fill="#94A3B8"/>
-          <circle cx="107" cy="250" r="3" fill="#94A3B8"/>
-          <circle cx="119" cy="250" r="3" fill="#94A3B8"/>
-        </svg>
+        <div className="w-full rounded-[1rem] overflow-hidden bg-slate-50">
+          <img
+            src={FeaturesCollaboration}
+            alt="Sprintly collaboration preview"
+            className="w-full h-auto object-cover object-top"
+          />
+        </div>
       ),
       analytics: (
-        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-          <rect width="400" height="300" rx="16" fill="#F8FAFC"/>
-          
-          {/* Main Chart */}
-          <rect x="20" y="20" width="230" height="150" rx="12" fill="white" stroke="#E2E8F0" strokeWidth="2"/>
-          <rect x="35" y="35" width="80" height="12" rx="3" fill="#334155"/>
-          
-          {/* Line Chart */}
-          <path d="M50 140 L90 110 L130 125 L170 80 L210 95" stroke="#4F46E5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M50 140 L90 110 L130 125 L170 80 L210 95 L210 150 L50 150 Z" fill="url(#gradient1)" opacity="0.2"/>
-          
-          {/* Chart dots */}
-          <circle cx="50" cy="140" r="5" fill="#4F46E5"/>
-          <circle cx="90" cy="110" r="5" fill="#4F46E5"/>
-          <circle cx="130" cy="125" r="5" fill="#4F46E5"/>
-          <circle cx="170" cy="80" r="5" fill="#4F46E5"/>
-          <circle cx="210" cy="95" r="5" fill="#4F46E5"/>
-          
-          {/* Pie Chart */}
-          <circle cx="320" cy="95" r="55" fill="#EEF2FF"/>
-          <path d="M320 40 A55 55 0 0 1 375 95 L320 95 Z" fill="#4F46E5"/>
-          <path d="M375 95 A55 55 0 0 1 320 150 L320 95 Z" fill="#10B981"/>
-          <path d="M320 150 A55 55 0 0 1 265 95 L320 95 Z" fill="#F59E0B"/>
-          
-          {/* Stat Cards */}
-          <rect x="20" y="185" width="115" height="95" rx="10" fill="white" stroke="#E2E8F0" strokeWidth="2"/>
-          <rect x="35" y="200" width="50" height="8" rx="2" fill="#94A3B8"/>
-          <rect x="35" y="218" width="70" height="20" rx="4" fill="#4F46E5"/>
-          <rect x="35" y="250" width="80" height="6" rx="2" fill="#D1FAE5"/>
-          <text x="95" y="257" fill="#10B981" fontSize="10" fontWeight="bold">+12%</text>
-          
-          <rect x="145" y="185" width="115" height="95" rx="10" fill="white" stroke="#E2E8F0" strokeWidth="2"/>
-          <rect x="160" y="200" width="60" height="8" rx="2" fill="#94A3B8"/>
-          <rect x="160" y="218" width="80" height="20" rx="4" fill="#10B981"/>
-          <rect x="160" y="250" width="70" height="6" rx="2" fill="#FEF3C7"/>
-          <text x="220" y="257" fill="#F59E0B" fontSize="10" fontWeight="bold">+8%</text>
-          
-          <rect x="270" y="185" width="115" height="95" rx="10" fill="white" stroke="#E2E8F0" strokeWidth="2"/>
-          <rect x="285" y="200" width="45" height="8" rx="2" fill="#94A3B8"/>
-          <rect x="285" y="218" width="60" height="20" rx="4" fill="#F59E0B"/>
-          <rect x="285" y="250" width="85" height="6" rx="2" fill="#EEF2FF"/>
-          <text x="360" y="257" fill="#4F46E5" fontSize="10" fontWeight="bold">+24%</text>
-          
-          <defs>
-            <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#4F46E5" stopOpacity="0.3"/>
-              <stop offset="100%" stopColor="#4F46E5" stopOpacity="0"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      )
+        <div className="w-full rounded-[1rem] overflow-hidden bg-slate-50">
+          <img
+            src={FeaturesAnalytics}
+            alt="Sprintly analytics preview"
+            className="w-full h-auto object-cover object-top"
+          />
+        </div>
+      ),
     };
     return illustrations[type] || illustrations.task;
   };
