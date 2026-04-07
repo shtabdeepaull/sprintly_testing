@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
-import LandingHeroDashboard from '../assets/landing-hero-dashboard.png';
 import PublicCTA from '../components/common/PublicCTA';
+import LandingHeroDashboard from '../assets/landing-hero-dashboard.png';
+import LandingKanbanPreview from '../assets/landing-kanban-preview.png';
+import LandingCollaborationPreview from '../assets/landing-collaboration-preview.png';
+import LandingAnalyticsPreview from '../assets/landing-analytics-preview.png';
 import {
   HiOutlineViewBoards,
   HiOutlineUserGroup,
@@ -114,102 +117,31 @@ const LandingPage = () => {
   const FeatureIllustration = ({ type }) => {
     const illustrations = {
       kanban: (
-        <svg viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-          <rect width="480" height="320" rx="16" fill="#F8FAFC" />
-          <rect x="20" y="20" width="138" height="280" rx="12" fill="#EEF2FF" />
-          <rect x="170" y="20" width="138" height="280" rx="12" fill="#F0FDF4" />
-          <rect x="320" y="20" width="138" height="280" rx="12" fill="#FEF3C7" />
-          <rect x="32" y="32" width="55" height="14" rx="4" fill="#4F46E5" />
-          <rect x="182" y="32" width="70" height="14" rx="4" fill="#10B981" />
-          <rect x="332" y="32" width="45" height="14" rx="4" fill="#F59E0B" />
-          {[0, 1, 2].map((i) => (
-            <g key={`c1-${i}`}>
-              <rect x="32" y={60 + i * 75} width="114" height="65" rx="8" fill="white" stroke="#E0E7FF" />
-              <rect x="44" y={72 + i * 75} width="70" height="8" rx="2" fill="#334155" />
-              <rect x="44" y={86 + i * 75} width="90" height="6" rx="2" fill="#94A3B8" />
-              <rect x="44" y={98 + i * 75} width="60" height="6" rx="2" fill="#94A3B8" />
-              <circle cx="122" cy={110 + i * 75} r="10" fill="#4F46E5" />
-            </g>
-          ))}
-          {[0, 1].map((i) => (
-            <g key={`c2-${i}`}>
-              <rect x="182" y={60 + i * 90} width="114" height="75" rx="8" fill="white" stroke="#D1FAE5" />
-              <rect x="194" y={72 + i * 90} width="75" height="8" rx="2" fill="#334155" />
-              <rect x="194" y={86 + i * 90} width="90" height="6" rx="2" fill="#94A3B8" />
-              <rect x="194" y={98 + i * 90} width="70" height="6" rx="2" fill="#94A3B8" />
-              <circle cx="272" cy={120 + i * 90} r="10" fill="#10B981" />
-            </g>
-          ))}
-          <rect x="332" y="60" width="114" height="65" rx="8" fill="white" stroke="#FDE68A" />
-          <rect x="344" y="72" width="60" height="8" rx="2" fill="#334155" />
-          <rect x="344" y="86" width="85" height="6" rx="2" fill="#94A3B8" />
-          <circle cx="422" cy="105" r="10" fill="#F59E0B" />
-        </svg>
+        <div className="w-full rounded-[1rem] overflow-hidden bg-slate-50">
+          <img
+            src={LandingKanbanPreview}
+            alt="Sprintly kanban board preview"
+            className="w-full h-auto object-cover object-top"
+          />
+        </div>
       ),
       collaboration: (
-        <svg viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-          <rect width="480" height="320" rx="16" fill="#F8FAFC" />
-          <g>
-            <circle cx="60" cy="80" r="32" fill="#EEF2FF" />
-            <text x="48" y="88" fill="#4F46E5" fontSize="20" fontWeight="bold">SC</text>
-            <rect x="105" y="52" width="180" height="56" rx="12" fill="white" stroke="#E0E7FF" />
-            <rect x="120" y="66" width="120" height="8" rx="2" fill="#334155" />
-            <rect x="120" y="80" width="150" height="6" rx="2" fill="#94A3B8" />
-            <rect x="120" y="92" width="90" height="6" rx="2" fill="#94A3B8" />
-          </g>
-          <g>
-            <rect x="150" y="130" width="200" height="65" rx="12" fill="#4F46E5" />
-            <rect x="165" y="145" width="130" height="8" rx="2" fill="white" />
-            <rect x="165" y="159" width="170" height="6" rx="2" fill="#C7D2FE" />
-            <rect x="165" y="171" width="100" height="6" rx="2" fill="#C7D2FE" />
-            <circle cx="390" cy="162" r="32" fill="#EEF2FF" />
-            <text x="376" y="170" fill="#4F46E5" fontSize="20" fontWeight="bold">MR</text>
-          </g>
-          <g>
-            <circle cx="60" cy="250" r="32" fill="#F0FDF4" />
-            <text x="48" y="258" fill="#10B981" fontSize="20" fontWeight="bold">EJ</text>
-            <rect x="105" y="222" width="160" height="50" rx="12" fill="white" stroke="#D1FAE5" />
-            <rect x="120" y="236" width="100" height="8" rx="2" fill="#334155" />
-            <rect x="120" y="250" width="130" height="6" rx="2" fill="#94A3B8" />
-          </g>
-          <circle cx="430" cy="50" r="22" fill="#FEE2E2" />
-          <text x="423" y="56" fill="#EF4444" fontSize="16" fontWeight="bold">3</text>
-          <circle cx="420" cy="280" r="6" fill="#10B981" />
-          <rect x="345" y="272" width="60" height="16" rx="8" fill="#F0FDF4" />
-          <text x="354" y="284" fill="#10B981" fontSize="10">Online</text>
-        </svg>
+        <div className="w-full rounded-[1rem] overflow-hidden bg-slate-50">
+          <img
+            src={LandingCollaborationPreview}
+            alt="Sprintly collaboration preview"
+            className="w-full h-auto object-cover object-top"
+          />
+        </div>
       ),
       analytics: (
-        <svg viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-          <rect width="480" height="320" rx="16" fill="#F8FAFC" />
-          <rect x="20" y="20" width="260" height="170" rx="12" fill="white" stroke="#E2E8F0" />
-          <rect x="35" y="35" width="80" height="10" rx="3" fill="#334155" />
-          <rect x="50" y="145" width="28" height="30" rx="4" fill="#C7D2FE" />
-          <rect x="88" y="115" width="28" height="60" rx="4" fill="#A5B4FC" />
-          <rect x="126" y="85" width="28" height="90" rx="4" fill="#818CF8" />
-          <rect x="164" y="65" width="28" height="110" rx="4" fill="#6366F1" />
-          <rect x="202" y="95" width="28" height="80" rx="4" fill="#4F46E5" />
-          <rect x="240" y="55" width="28" height="120" rx="4" fill="#4338CA" />
-          <circle cx="380" cy="105" r="65" fill="#EEF2FF" />
-          <path d="M380 40 A65 65 0 0 1 445 105 L380 105 Z" fill="#4F46E5" />
-          <path d="M445 105 A65 65 0 0 1 380 170 L380 105 Z" fill="#10B981" />
-          <path d="M380 170 A65 65 0 0 1 315 105 L380 105 Z" fill="#F59E0B" />
-          <rect x="20" y="210" width="140" height="90" rx="12" fill="white" stroke="#E2E8F0" />
-          <rect x="35" y="225" width="50" height="8" rx="2" fill="#94A3B8" />
-          <rect x="35" y="242" width="70" height="16" rx="4" fill="#4F46E5" />
-          <rect x="35" y="270" width="90" height="6" rx="2" fill="#D1FAE5" />
-          <text x="130" y="275" fill="#10B981" fontSize="10">+12%</text>
-          <rect x="170" y="210" width="140" height="90" rx="12" fill="white" stroke="#E2E8F0" />
-          <rect x="185" y="225" width="60" height="8" rx="2" fill="#94A3B8" />
-          <rect x="185" y="242" width="80" height="16" rx="4" fill="#10B981" />
-          <rect x="185" y="270" width="70" height="6" rx="2" fill="#FEF3C7" />
-          <text x="280" y="275" fill="#F59E0B" fontSize="10">+8%</text>
-          <rect x="320" y="210" width="140" height="90" rx="12" fill="white" stroke="#E2E8F0" />
-          <rect x="335" y="225" width="45" height="8" rx="2" fill="#94A3B8" />
-          <rect x="335" y="242" width="60" height="16" rx="4" fill="#F59E0B" />
-          <rect x="335" y="270" width="100" height="6" rx="2" fill="#EEF2FF" />
-          <text x="430" y="275" fill="#4F46E5" fontSize="10">+24%</text>
-        </svg>
+        <div className="w-full rounded-[1rem] overflow-hidden bg-slate-50">
+          <img
+            src={LandingAnalyticsPreview}
+            alt="Sprintly analytics preview"
+            className="w-full h-auto object-cover object-top"
+          />
+        </div>
       )
     };
 
@@ -277,7 +209,7 @@ const LandingPage = () => {
                   {['indigo', 'emerald', 'amber', 'rose'].map((color, i) => (
                     <div
                       key={i}
-                      className={`w-10 h-10 bg-${color}-500 rounded-full border-2 border-white flex items-center justify-center text-white text-sm font-medium shadow-sm`}
+                      className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-white text-sm font-medium shadow-sm"
                       style={{
                         backgroundColor: ['#6366F1', '#10B981', '#F59E0B', '#F43F5E'][i]
                       }}
@@ -475,7 +407,7 @@ const LandingPage = () => {
 
       <PublicCTA />
 
-     <Footer/>
+     <Footer />
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
