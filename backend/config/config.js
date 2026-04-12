@@ -16,6 +16,9 @@ module.exports = {
   SMTP_PASSWORD: process.env.SMTP_PASSWORD,
   FROM_NAME: process.env.FROM_NAME || 'Sprintly',
 
+  RESEND_API_KEY: process.env.RESEND_API_KEY,
+  FROM_EMAIL: process.env.FROM_EMAIL,
+
   CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
   CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
   CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,

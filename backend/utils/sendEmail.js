@@ -1,47 +1,46 @@
-const nodemailer = require('nodemailer');
+const axios = require('axios');
 const config = require('../config/config');
 
 const sendEmail = async ({ email, subject, message, html }) => {
-  console.log('SMTP DEBUG:', {
-    host: config.SMTP_HOST,
-    port: config.SMTP_PORT,
-    secure: false,
-    hasUser: !!config.SMTP_EMAIL,
-    hasPass: !!config.SMTP_PASSWORD,
-  });
+  if (!config.RESEND_API_KEY) {
+    throw new Error('RESEND_API_KEY is missing');
+  }
 
-  const transporter = nodemailer.createTransport({
-    host: config.SMTP_HOST,
-    port: config.SMTP_PORT,
-    secure: false,
-    auth: {
-      user: config.SMTP_EMAIL,
-      pass: config.SMTP_PASSWORD,
-    },
-    connectionTimeout: 10000,
-    greetingTimeout: 10000,
-    socketTimeout: 10000,
+  if (!config.FROM_EMAIL) {
+    throw new Error('FROM_EMAIL is missing');
+  }
+
+  console.log('RESEND DEBUG:', {
+    hasApiKey: !!config.RESEND_API_KEY,
+    fromEmail: config.FROM_EMAIL,
+    toEmail: email,
   });
 
   try {
-    await transporter.verify();
-    console.log('SMTP verify success');
+    const response = await axios.post(
+      'https://api.resend.com/emails',
+      {
+        from: `${config.FROM_NAME || 'Sprintly'} <${config.FROM_EMAIL}>`,
+        to: email,
+        subject,
+        text: message || '',
+        html: html || `<p>${message || ''}</p>`,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${config.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        timeout: 15000,
+      }
+    );
+
+    console.log('Resend mail sent:', response.data);
+    return response.data;
   } catch (error) {
-    console.error('SMTP verify failed:', error);
+    console.error('Resend send failed:', error.response?.data || error.message);
     throw error;
   }
-
-  const mailOptions = {
-    from: `${config.FROM_NAME || 'Sprintly'} <${config.SMTP_EMAIL}>`,
-    to: email,
-    subject,
-    text: message || '',
-    html: html || '',
-  };
-
-  const info = await transporter.sendMail(mailOptions);
-  console.log('Mail sent:', info.messageId);
-  return info;
 };
 
 module.exports = sendEmail;
